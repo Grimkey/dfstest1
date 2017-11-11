@@ -3,6 +3,8 @@ import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap/dist/css/bootstrap-theme.css';
 import './App.css';
 
+import Hello from './components/Hello';
+
 class App extends React.Component {
   render() {
     return (
@@ -11,8 +13,9 @@ class App extends React.Component {
           <h2>Pomodoro Timer</h2>
           <p className="timer">25:00</p>
         </div>
-        <p className="App-intro">
+        <Hello name="TypeScript" enthusiasmLevel={10} />
 
+        <dev className="App-intro">
           <h2 className="sub-header">TODO List</h2>
           <div className="table-responsive">
             <table className="table table-striped">
@@ -158,7 +161,7 @@ class App extends React.Component {
               </tbody>
             </table>
           </div>
-        </p>
+        </div>
       </div>
     );
   }
