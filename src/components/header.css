@@ -1,0 +1,10 @@
+.app-header {
+  background-color: #222;
+  height: 160px;
+  padding: 20px;
+  color: white;
+}
+
+.timer {
+  font-size: 4em;
+}
