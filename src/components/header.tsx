@@ -1,6 +1,4 @@
 import * as React from 'react';
-import 'bootstrap/dist/css/bootstrap.css';
-import 'bootstrap/dist/css/bootstrap-theme.css';
 import './header.css';
 
 import Timer from './timer';
