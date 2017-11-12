@@ -3,70 +3,70 @@ import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap/dist/css/bootstrap-theme.css';
 import './todolist.css';
 
-class TodoList extends React.Component {
+interface TodoListState {
+  List: string[];
+}
+
+class TodoList extends React.Component<{}, TodoListState> {
+  constructor(props: {}) {
+    super(props);
+    this.state = {List: ['Start your pomodoro session.']};
+  }
+
+  renderList(): JSX.Element[] {
+    const listItems = this.state.List.map((entry, index) =>
+      this.renderListItem(entry, index)
+    );
+
+    return listItems;
+  }
+
+  renderListItem(entry: string, index: number) {
+    return (
+      <div key={index} className="input-group">
+        <span className="input-group-addon">
+          <input type="checkbox" aria-label="..." />
+        </span>
+        <input type="text" className="form-control" aria-label="..." readOnly={true} value={entry}/>
+      </div>
+    );
+  }
   render() {
     return (
-        <div className="App-intro">
-          <h2 className="sub-header">TODO List</h2>
-          <div className="table-responsive">
-            <table className="table table-striped">
-              <thead>
-                <tr>
-                  <th>#</th>
-                  <th>Header</th>
-                  <th>Header</th>
-                  <th>Header</th>
-                  <th>Header</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td><input type="checkbox"/></td>
-                  <td>Lorem</td>
-                  <td>ipsum</td>
-                  <td>dolor</td>
-                  <td>sit</td>
-                </tr>
-                <tr>
-                  <td><input type="checkbox"/></td>
-                  <td>amet</td>
-                  <td>consectetur</td>
-                  <td>adipiscing</td>
-                  <td>elit</td>
-                </tr>
-                <tr>
-                  <td><input type="checkbox"/></td>
-                  <td>Integer</td>
-                  <td>nec</td>
-                  <td>odio</td>
-                  <td>Praesent</td>
-                </tr>
-                <tr>
-                  <td><input type="checkbox"/></td>
-                  <td>libero</td>
-                  <td>Sed</td>
-                  <td>cursus</td>
-                  <td>ante</td>
-                </tr>
-                <tr>
-                  <td><input type="checkbox"/></td>
-                  <td>dapibus</td>
-                  <td>diam</td>
-                  <td>Sed</td>
-                  <td>nisi</td>
-                </tr>
-                <tr>
-                  <td><input type="checkbox"/></td>
-                  <td>Nulla</td>
-                  <td>quis</td>
-                  <td>sem</td>
-                  <td>at</td>
-                </tr>
-                </tbody>
-            </table>
+      <div className="todolist">
+        <p>TODO List</p>
+        <div className="col-lg-12">
+          <div className="input-group">
+            <input id="addbox" type="text" className="form-control" placeholder="Add a todo item..." />
+            <span className="input-group-btn">
+              <button className="btn btn-default" type="button" onClick={() => this.buttonHandler()}>Go!</button>
+            </span>
           </div>
+          {this.renderList()}
         </div>
+      </div>
     );
+  }
+
+  private buttonHandler() {
+      const addbox = document.getElementById('addbox') as HTMLInputElement;
+      if (addbox === null) {
+        console.log('addbox is null');
+        return true;
+      }
+
+      const text = addbox.value;
+      if (text === null) {
+        console.log('text is null');
+        return true;
+      }
+
+      this.state.List.push(text);
+      this.setState({
+        List: this.state.List,
+      });
+
+      return true;
   }
 }
 

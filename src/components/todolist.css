@@ -1,5 +1,10 @@
-.App-intro {
-  font-size: large;
+.todolist {
+  text-align: center;
+}
+
+table {
+  text-align: left;
+  border-collapse: collapse;
 }
 
 .sub-header {

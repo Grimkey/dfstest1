@@ -5,7 +5,6 @@ import './App.css';
 
 import Header from './components/header';
 import TodoList from './components/todolist';
-import CompleteList from './components/completelist';
 
 class App extends React.Component {
   render() {
@@ -13,7 +12,6 @@ class App extends React.Component {
       <div className="App">
         <Header/>
         <TodoList/>
-        <CompleteList/>
       </div>
     );
   }

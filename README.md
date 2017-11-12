@@ -13,3 +13,4 @@ Sources used:
 <https://charleslbryant.gitbooks.io/hello-react-and-typescript/content/DefinePropsAndStateTypes.html>
 <https://github.com/Microsoft/TypeScript/issues/842>
 <https://www.w3schools.com/howto/howto_js_countdown.asp>
+<https://codepen.io/antonietta/pen/KzxxWN>
