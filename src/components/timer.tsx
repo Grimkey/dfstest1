@@ -34,7 +34,7 @@ class Timer extends React.Component<TimerProps, TimerState> {
 
     render() {
         return (
-            <div>{this.state.countdown.ToString()}.</div>
+            <div>{this.state.countdown.ToString()}</div>
         );
     }
 

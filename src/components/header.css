@@ -8,3 +8,8 @@
 .timer {
   font-size: 4em;
 }
+
+.timer_button {
+  background-color: #222;
+  border: none;
+}
